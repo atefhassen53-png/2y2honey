@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AA Honey — Natural Honey</title>
+<meta name="description" content="AA Honey — pure natural honey from Tunisia. Order directly through WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D99A19; --gold2:#F2C14E; --brown:#2B1A0E; --cream:#FFF9EF;
+  --beige:#F6EBD8; --green:#25D366; --muted:#74695E; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--brown);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:20;display:flex;
+  justify-content:space-between;align-items:center;padding:18px 7%;
+  background:rgba(255,249,239,.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(217,154,25,.18)
+}
+.logo{font-family:"Playfair Display",serif;font-size:1.7rem;font-weight:700}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:28px;font-size:.92rem;font-weight:600}
+.navlinks a:hover{color:var(--gold)}
+.hero{min-height:100vh;padding:130px 7% 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+background:radial-gradient(circle at 75% 40%,#fff 0,#fff9ef 38%,#f8edda 100%)}
+.badge{display:inline-block;padding:8px 15px;border-radius:99px;background:#fff;border:1px solid #efd9aa;color:#9b6910;font-size:.82rem;font-weight:700;margin-bottom:20px}
+h1,h2,h3{font-family:"Playfair Display",serif}
+h1{font-size:clamp(3.2rem,7vw,6.4rem);line-height:.98;margin-bottom:25px}
+h1 span{color:var(--gold)}
+.hero p{max-width:590px;color:var(--muted);font-size:1.1rem;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:50px;background:var(--brown);color:#fff;font-weight:700}
+.btn:hover{transform:translateY(-2px);background:#4a2b14}
+.honey-art{position:relative;min-height:470px;display:flex;align-items:center;justify-content:center}
+.jar{width:min(310px,72vw);height:360px;border-radius:38px 38px 48px 48px;background:linear-gradient(145deg,#ffd766,#c87b0b 75%);
+box-shadow:0 35px 70px rgba(89,52,10,.22),inset 12px 0 30px rgba(255,255,255,.25);position:relative}
+.jar:before{content:"";position:absolute;left:25px;right:25px;top:-26px;height:55px;border-radius:15px;background:#3a2516;box-shadow:0 8px 0 #21150c}
+.label{position:absolute;left:28px;right:28px;top:105px;padding:27px 12px;text-align:center;background:#fff9e9;border-radius:8px;border:2px solid #d99a19}
+.label strong{font-family:"Playfair Display",serif;font-size:2.25rem}
+.label small{display:block;letter-spacing:3px;font-weight:700;margin-top:7px}
+.honeycomb{position:absolute;font-size:6rem;opacity:.15;right:3%;bottom:4%}
+section{padding:100px 7%}
+.section-head{text-align:center;margin-bottom:55px}
+.section-head h2{font-size:clamp(2.3rem,5vw,3.5rem)}
+.section-head p{color:var(--muted);margin-top:10px}
+.products{background:var(--beige)}
+.grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{background:#fff;border-radius:24px;padding:28px;box-shadow:0 15px 45px rgba(73,44,11,.07);transition:.25s}
+.card:hover{transform:translateY(-7px)}
+.product-visual{height:180px;border-radius:18px;background:linear-gradient(135deg,#ffe28a,#c88313);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.mini-jar{width:90px;height:115px;border-radius:15px 15px 20px 20px;background:linear-gradient(145deg,#ffe17b,#b96d08);position:relative;box-shadow:0 15px 30px rgba(80,40,0,.2)}
+.mini-jar:before{content:"";position:absolute;width:72px;height:18px;top:-9px;left:9px;background:#392417;border-radius:6px}
+.card h3{font-size:1.55rem;margin-bottom:5px}
+.card p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.size{display:flex;gap:8px;margin-bottom:18px}
+.size button{flex:1;border:1px solid #e5d5b9;background:#fffaf1;border-radius:10px;padding:9px 4px;cursor:pointer;font-weight:700;color:var(--brown)}
+.size button.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.price{font-size:1.35rem;font-weight:800;margin-bottom:16px;color:var(--gold)}
+.wa{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:#fff;padding:13px;border-radius:12px;font-weight:800;border:0;cursor:pointer;font-size:.95rem}
+.wa:hover{background:#159447}
+.order{background:#fff}
+.order-box{max-width:850px;margin:auto;background:var(--cream);border:1px solid #ead7b7;border-radius:28px;padding:38px}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label{font-weight:700;font-size:.9rem}
+input,select,textarea{width:100%;margin-top:7px;padding:13px 14px;border:1px solid #dfceb0;border-radius:10px;background:#fff;font:inherit;color:var(--brown)}
+.full{grid-column:1/-1}
+.note{font-size:.82rem;color:var(--muted);margin-top:14px}
+.contact{text-align:center;background:var(--brown);color:#fff}
+.contact p{color:#dbcfc2;margin:10px auto 24px;max-width:600px}
+.contact .btn{background:var(--green)}
+footer{text-align:center;padding:22px;background:#1e1209;color:#cfc2b5;font-size:.85rem}
+.float{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:27px;z-index:30;box-shadow:0 10px 25px rgba(0,0,0,.2)}
+@media(max-width:850px){
+  .navlinks{display:none}.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}
+  .honey-art{min-height:390px}.grid{grid-template-columns:1fr}.order-grid{grid-template-columns:1fr}.full{grid-column:auto}
+}
+
+/* === PREMIUM SHOP / CHECKOUT ENHANCEMENTS === */
+.eyebrow{display:inline-block;color:var(--gold);font-size:.75rem;font-weight:800;letter-spacing:3px;margin-bottom:9px}
+.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(217,154,25,.13) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(to bottom,black,transparent);pointer-events:none}
+.hero-content,.honey-art{animation:heroIn .9s cubic-bezier(.2,.8,.2,1) both}
+.honey-art{animation-delay:.12s}
+@keyframes heroIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.jar{animation:floatJar 4s ease-in-out infinite}
+@keyframes floatJar{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-13px) rotate(1deg)}}
+.product-card{overflow:visible}
+.product-visual{position:relative;overflow:hidden}
+.product-visual:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.15);top:-85px;right:-55px}
+.jar-size{position:absolute;left:20px;top:16px;font-family:"Playfair Display",serif;font-size:2.3rem;font-weight:700;color:#fff;z-index:2}
+.ml{position:absolute;left:22px;top:58px;color:rgba(255,255,255,.85);font-weight:700;z-index:2}
+.product-copy{padding-top:0}
+.product-tag{font-size:.67rem;font-weight:800;letter-spacing:1.8px;color:var(--gold)}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+.product-bottom .price{font-size:1rem;margin:0}
+.add-btn{border:0;background:var(--brown);color:#fff;border-radius:12px;padding:12px 15px;font-weight:800;cursor:pointer;transition:.25s}
+.add-btn span{color:var(--gold2);font-size:1.1rem;margin-left:5px}
+.add-btn:hover{transform:translateY(-2px);background:#4a2b14}
+.featured{border:1px solid rgba(217,154,25,.45);box-shadow:0 20px 55px rgba(120,76,10,.12)}
+.popular{position:absolute;top:14px;right:14px;z-index:3;background:var(--gold);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:1px;padding:7px 10px;border-radius:99px}
+.cart-bar{max-width:1180px;margin:42px auto 0;padding:14px 16px 14px 20px;background:var(--brown);color:#fff;border-radius:18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 15px 40px rgba(43,29,14,.2);transform:translateY(20px);opacity:0;transition:.4s}
+.cart-bar.show{transform:none;opacity:1}
+.cart-bar>div{display:flex;align-items:center;gap:12px}
+.cart-count{width:35px;height:35px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-weight:900}
+.cart-bar small{display:block;color:#cfc3b6}
+.cart-bar button{border:0;background:#fff;color:var(--brown);padding:11px 18px;border-radius:11px;font-weight:800;cursor:pointer}
+.about{padding:90px 7%;background:#fff}
+.about-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:130px 1fr 1fr;gap:45px;align-items:center}
+.about-mark{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:700}
+.about-mark span{color:var(--gold)}
+.about h2{font-size:2.8rem}
+.about p{color:var(--muted);max-width:520px}
+.about-points{display:grid;gap:13px}
+.about-points div{display:grid;grid-template-columns:32px 1fr;align-items:center}
+.about-points b{font-size:.92rem}.about-points span{grid-column:2;color:var(--muted);font-size:.8rem}
+.checkout-overlay{position:fixed;inset:0;background:rgba(25,14,6,.62);backdrop-filter:blur(8px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}
+.checkout-overlay.open{opacity:1;visibility:visible}
+.checkout-modal{position:relative;width:min(980px,100%);max-height:92vh;overflow:auto;background:var(--cream);border-radius:26px;padding:34px;box-shadow:0 35px 100px rgba(0,0,0,.3);transform:translateY(25px) scale(.98);transition:.35s}
+.checkout-overlay.open .checkout-modal{transform:none}
+.close-checkout{position:absolute;right:18px;top:15px;width:38px;height:38px;border:0;border-radius:50%;background:#f0e4d3;color:var(--brown);font-size:25px;cursor:pointer}
+.checkout-head{text-align:center;margin-bottom:27px}.checkout-head h2{font-size:2.35rem}.checkout-head p{color:var(--muted);font-size:.9rem}
+.checkout-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
+.step{display:flex;gap:12px;align-items:center;margin:12px 0 16px}.step>span{width:31px;height:31px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-weight:800}.step small{display:block;color:var(--muted);font-size:.76rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{font-size:.82rem;font-weight:700}.wide{grid-column:1/-1}
+.form-grid input,.form-grid textarea{border:1px solid #e4d1ae;outline:none;transition:.2s}.form-grid input:focus,.form-grid textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,154,25,.12)}
+.payment-options{display:grid;gap:10px}.pay-option{display:flex;align-items:center;gap:12px;background:#fff;padding:13px;border:1px solid #ead8bb;border-radius:13px;cursor:pointer}.pay-option:has(input:checked){border-color:var(--gold);background:#fffaf0}.pay-option input{accent-color:var(--gold)}.pay-option span{font-size:1.35rem}.pay-option small{display:block;color:var(--muted);font-weight:400;margin-top:2px}
+.summary{background:#fff;border:1px solid #ead8bb;border-radius:20px;padding:20px;height:max-content;position:sticky;top:0}.summary-title{font-family:"Playfair Display",serif;font-size:1.45rem;margin-bottom:15px}
+.summary-row{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #f0e4d3;font-size:.86rem}.summary-row small{display:block;color:var(--muted)}.qty-controls{display:flex;align-items:center;gap:7px}.qty-controls button{width:25px;height:25px;border:1px solid #ddc9a5;background:#fff;border-radius:7px;cursor:pointer}.summary-total{display:flex;justify-content:space-between;padding:18px 0;font-size:1.1rem}.summary-total strong{color:var(--gold)}
+.whatsapp-checkout{width:100%;border:0;border-radius:13px;background:var(--green);color:#fff;padding:14px;font-weight:900;font-size:.95rem;cursor:pointer;transition:.25s}.whatsapp-checkout:hover{background:#159447;transform:translateY(-2px)}.whatsapp-checkout span{float:right}.secure{display:block;text-align:center;color:var(--muted);font-size:.68rem;margin-top:12px;line-height:1.5}
+@media(max-width:850px){.about-inner{grid-template-columns:1fr;text-align:center}.about p{margin:auto}.about-points{text-align:left}.checkout-layout{grid-template-columns:1fr}.summary{position:static}.checkout-modal{padding:25px 18px}.checkout-head h2{font-size:1.9rem}}
+@media(max-width:520px){.product-bottom{flex-direction:column;align-items:stretch}.cart-bar{gap:12px}.cart-bar button{padding:10px 12px;font-size:.78rem}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#">A<span>&</span>A Honey</a>
+  <div class="navlinks"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <div class="badge">🍯 100% Natural Honey</div>
+    <h1>Nature's <span>Golden</span> Gift.</h1>
+    <p>Pure honey, carefully selected and brought straight to your table. Choose your jar and order easily through WhatsApp.</p>
+    <a class="btn" href="#shop">Discover our honey →</a>
+  </div>
+  <div class="honey-art">
+    <div class="jar"><div class="label"><strong>A&A</strong><small>NATURAL HONEY</small></div></div>
+    <div class="honeycomb">⬡⬡<br>⬡⬡⬡</div>
+  </div>
+</section>
+
+<section class="products" id="shop">
+  <div class="section-head reveal">
+    <span class="eyebrow">OUR COLLECTION</span>
+    <h2>Pure Honey, Your Way</h2>
+    <p>Choose your jar size and add it to your order. Your complete order will be sent to WhatsApp for confirmation and payment.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card product-card reveal">
+      <div class="product-visual">
+        <span class="jar-size">100</span><span class="ml">ml</span>
+        <div class="mini-jar"></div>
+      </div>
+      <div class="product-copy">
+        <span class="product-tag">TASTING SIZE</span>
+        <h3>Honey 100 ml</h3>
+        <p>A small jar for discovering the natural taste of our honey.</p>
+        <div class="product-bottom">
+          <strong class="price" data-price="0">Price on WhatsApp</strong>
+          <button class="add-btn" onclick="addToCart('Honey 100 ml','100 ml',0)">Add to order <span>+</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card product-card featured reveal">
+      <div class="popular">POPULAR</div>
+      <div class="product-visual">
+        <span class="jar-size">200</span><span class="ml">ml</span>
+        <div class="mini-jar" style="transform:scale(1.12)"></div>
+      </div>
+      <div class="product-copy">
+        <span class="product-tag">EVERYDAY FAVORITE</span>
+        <h3>Honey 200 ml</h3>
+        <p>The perfect everyday size for enjoying pure natural honey at home.</p>
+        <div class="product-bottom">
+          <strong class="price" data-price="0">Price on WhatsApp</strong>
+          <button class="add-btn" onclick="addToCart('Honey 200 ml','200 ml',0)">Add to order <span>+</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card product-card reveal">
+      <div class="product-visual">
+        <span class="jar-size">1000</span><span class="ml">ml</span>
+        <div class="mini-jar" style="transform:scale(1.42)"></div>
+      </div>
+      <div class="product-copy">
+        <span class="product-tag">FAMILY SIZE</span>
+        <h3>Honey 1000 ml</h3>
+        <p>A generous family jar for those who never want to run out of honey.</p>
+        <div class="product-bottom">
+          <strong class="price" data-price="0">Price on WhatsApp</strong>
+          <button class="add-btn" onclick="addToCart('Honey 1000 ml','1000 ml',0)">Add to order <span>+</span></button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="cart-bar" id="cartBar">
+    <div>
+      <span class="cart-count" id="cartCount">0</span>
+      <span><b>Your order</b><small id="cartText">Choose your honey above</small></span>
+    </div>
+    <button onclick="openCheckout()">Review & continue →</button>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner reveal">
+    <div class="about-mark">A<span>&</span>A</div>
+    <div>
+      <span class="eyebrow">AA HONEY</span>
+      <h2>Pure by nature.</h2>
+      <p>We believe good honey doesn't need to be complicated: natural taste, beautiful presentation, and a simple way to order.</p>
+    </div>
+    <div class="about-points">
+      <div>🍯 <b>Natural</b><span>Carefully selected honey</span></div>
+      <div>📦 <b>Freshly packed</b><span>Prepared for your order</span></div>
+      <div>💬 <b>Direct service</b><span>Order & payment via WhatsApp</span></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="checkout-overlay" id="checkoutOverlay" onclick="overlayClose(event)">
+  <div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="close-checkout" onclick="closeCheckout()" aria-label="Close">×</button>
+    <div class="checkout-head">
+      <span class="eyebrow">CHECKOUT</span>
+      <h2 id="checkoutTitle">Complete your order</h2>
+      <p>Your order will open in WhatsApp with all the details already prepared.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <div class="checkout-form">
+        <div class="step"><span>1</span><div><b>Your information</b><small>We need these details for delivery.</small></div></div>
+        <div class="form-grid">
+          <label>Full name<input id="cName" type="text" placeholder="Your name"></label>
+          <label>Phone number<input id="cPhone" type="tel" placeholder="+216 ..."></label>
+          <label class="wide">Delivery address<textarea id="cAddress" rows="3" placeholder="Street, city, governorate..."></textarea></label>
+        </div>
+
+        <div class="step"><span>2</span><div><b>Payment</b><small>Payment is completed directly with us on WhatsApp.</small></div></div>
+        <div class="payment-options">
+          <label class="pay-option"><input type="radio" name="payment" value="Cash on delivery" checked><span>💵</span><div><b>Cash on delivery</b><small>Pay when your order arrives.</small></div></label>
+          <label class="pay-option"><input type="radio" name="payment" value="Payment confirmed on WhatsApp"><span>💬</span><div><b>Confirm payment on WhatsApp</b><small>We'll send you the payment instructions.</small></div></label>
+        </div>
+      </div>
+
+      <aside class="summary">
+        <div class="summary-title">Order summary</div>
+        <div id="summaryItems"></div>
+        <div class="summary-total"><span>Total</span><strong id="summaryTotal">Price on WhatsApp</strong></div>
+        <button class="whatsapp-checkout" onclick="sendCheckout()">Continue to WhatsApp <span>→</span></button>
+        <small class="secure">🔒 Your order is sent directly to our WhatsApp: <b>+216 51 277 501</b></small>
+      </aside>
+    </div>
+  </div>
+</div>
+<section class="contact" id="contact">
+  <h2>Let's talk honey 🍯</h2>
+  <p>Have a question about the honey, sizes, delivery or payment? Message us directly.</p>
+  <a class="btn" href="https://wa.me/21651277501?text=Hello%20A%26A%20Honey%2C%20I%20would%20like%20some%20information." target="_blank">WhatsApp: +216 51 277 501</a>
+</section>
+
+<footer>© 2026 A&A Honey — Natural Honey</footer>
+<a class="float" href="https://wa.me/21651277501?text=Hello%20A%26A%20Honey%2C%20I%20want%20to%20order%20honey." target="_blank" aria-label="WhatsApp">☘</a>
+
+<script>
+const WA_NUMBER = "21651277501";
+let cart = [];
+
+function addToCart(name, size, price){
+  const found = cart.find(x => x.size === size);
+  if(found) found.qty++;
+  else cart.push({name, size, price, qty:1});
+  updateCart();
+  document.getElementById("cartBar").classList.add("show");
+  const bar = document.getElementById("cartBar");
+  bar.animate([{transform:"scale(.98)"},{transform:"scale(1)"}],{duration:220,easing:"ease-out"});
+}
+
+function changeQty(size, delta){
+  const item = cart.find(x => x.size === size);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty <= 0) cart = cart.filter(x => x.size !== size);
+  updateCart();
+  renderSummary();
+}
+
+function updateCart(){
+  const count = cart.reduce((n,x)=>n+x.qty,0);
+  document.getElementById("cartCount").textContent = count;
+  document.getElementById("cartText").textContent = count
+    ? cart.map(x => `${x.qty}× ${x.size}`).join("  •  ")
+    : "Choose your honey above";
+  document.getElementById("cartBar").classList.toggle("show", count > 0);
+}
+
+function renderSummary(){
+  const box = document.getElementById("summaryItems");
+  let total = 0, hasPrice = false;
+  box.innerHTML = "";
+  cart.forEach(item => {
+    if(item.price > 0){ total += item.price * item.qty; hasPrice = true; }
+    box.innerHTML += `
+      <div class="summary-row">
+        <div><b>${item.name}</b><small>${item.size}</small></div>
+        <div class="qty-controls">
+          <button onclick="changeQty('${item.size}',-1)">−</button>
+          <b>${item.qty}</b>
+          <button onclick="changeQty('${item.size}',1)">+</button>
+        </div>
+      </div>`;
+  });
+  document.getElementById("summaryTotal").textContent = hasPrice ? `${total.toFixed(2)} TND` : "Price on WhatsApp";
+}
+
+function openCheckout(){
+  if(!cart.length){
+    document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+    return;
+  }
+  renderSummary();
+  document.getElementById("checkoutOverlay").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+
+function closeCheckout(){
+  document.getElementById("checkoutOverlay").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+function overlayClose(e){
+  if(e.target.id === "checkoutOverlay") closeCheckout();
+}
+
+function sendCheckout(){
+  const name = document.getElementById("cName").value.trim();
+  const phone = document.getElementById("cPhone").value.trim();
+  const address = document.getElementById("cAddress").value.trim();
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+
+  if(!name || !phone || !address){
+    alert("Please complete your name, phone number and delivery address.");
+    return;
+  }
+
+  const orderLines = cart.map(x => `• ${x.name} — ${x.qty} × ${x.size}`).join("\n");
+  const totalKnown = cart.every(x => x.price > 0)
+    ? cart.reduce((n,x)=>n+x.price*x.qty,0).toFixed(2) + " TND"
+    : "Please confirm price on WhatsApp";
+
+  const message =
+`🍯 *NEW A&A HONEY ORDER*
+
+*Order:*
+${orderLines}
+
+*Customer information:*
+• Name: ${name}
+• Phone: ${phone}
+• Address: ${address}
+
+*Payment:*
+• ${payment}
+
+*Total: ${totalKnown}*
+
+Hello A&A Honey, I would like to complete this order. Please confirm the final price, delivery details and payment instructions. Thank you!`;
+
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+}
+
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeCheckout();
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12, rootMargin:"0px 0px -40px 0px"});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
